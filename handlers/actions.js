@@ -46,7 +46,7 @@ const handleSubmitQuery = (ctx) => {
 let userRegistration = {};
 
 const startRegistration = (ctx) => {
-    userRegistration[ctx.from.id] = {}; // Foydalanuvchi uchun vaqtinchalik obyekt yaratish
+    userRegistration[ctx.from.id] = {}; 
     ctx.reply('Please enter your first name:');
 };
 
@@ -91,15 +91,35 @@ module.exports = { startRegistration, processRegistration, submitRegistration, r
 
 
 const handleSubmitFeedback = (ctx) => {
-    const locale = languageMaps[ctx.session.language] || en;
-    ctx.reply(locale.submitFeedback);
+    ctx.reply('Please select:', Markup.inlineKeyboard([
+        Markup.button.callback(locale.feedback, 'feedback'),
+        Markup.button.callback('📋 Surveys', 'surveys'),
+        Markup.button.callback('🔙 Back', 'back_to_main_menu')
+    ]));
 };
 
+
+// bot.hears('📝 Surveys & Feedback', (ctx) => {
+//     ctx.reply('Please select:', Markup.inlineKeyboard([
+//         Markup.button.callback('📊 Feedback', 'feedback'),
+//         Markup.button.callback('📋 Surveys', 'surveys'),
+//         Markup.button.callback('🔙 Back', 'back_to_main_menu')
+//     ]));
+// });
 
 
 const ResourcesForYouth = (ctx) => {
     const locale = languageMaps[ctx.session.language] || en;
-    ctx.reply(locale.programApplied);
+    const keyboard = Markup.inlineKeyboard([
+        [
+            Markup.button.callback(locale.submitFeedback, 'submit_feedback'),
+            Markup.button.callback(locale.applyForOpportunity, 'submit_feedback')
+        ], [
+            Markup.button.callback(locale.applyForOpportunity, 'submit_feedback'),
+            Markup.button.callback(locale.back, 'back_to_main_menu')
+        ]
+    ]).resize();
+    ctx.reply(locale.programApplied, keyboard);
 };
 
 const contactUs = (ctx) => {
@@ -109,16 +129,23 @@ const contactUs = (ctx) => {
 
 const socialMedia = (ctx) => {
     const locale = languageMaps[ctx.session.language] || en;
-    return Markup.inlineKeyboard([
-        Markup.button.callback('🇬🇧 English', 'set_language_en'),
-        Markup.button.callback('🇺🇿 O\'zbek', 'set_language_uz'),
-        Markup.button.callback(locale.back, 'back_to_main_menu')
-    ]);
+
+    const keyboard = Markup.inlineKeyboard([
+        [
+            Markup.button.callback(locale.submitFeedback, 'submit_feedback'),
+            Markup.button.callback(locale.applyForOpportunity, 'submit_feedback')
+        ], [
+            Markup.button.callback(locale.applyForOpportunity, 'submit_feedback'),
+            Markup.button.callback(locale.back, 'back_to_main_menu')
+        ]]).resize();
+
+    // Foydalanuvchiga javob yuborish
+    ctx.reply('Please choose an option:', keyboard);
 };
 
 const handleAboutUs = (ctx) => {
     const locale = languageMaps[ctx.session.language] || en;
-    const caption = locale.aboutUsText || "Default caption text"; // Tarjima qilinadigan matn
+    const caption = locale.aboutUsText || "Default caption text";
 
     ctx.replyWithPhoto(
         'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',

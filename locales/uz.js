@@ -36,5 +36,6 @@ Bizning kompaniyamiz qo‘lda tayyorlangan qo‘g‘irchoqlarni ishlab chiqarish
 Mahsulotlarimiz sifatli materiallardan tayyorlanib, har bir qo‘g‘irchoq o‘ziga xos dizayn va sifatlarga ega. 
 Ushbu loyihamiz nogironligi bor shaxslarni qo‘llab-quvvatlashga qaratilgan bo‘lib, ular jamiyatning faol aʼzolariga aylanishlariga yordam beradi. 
 Biz nafaqat ichki bozorda, balki xalqaro bozorda ham sifatli mahsulotlarimiz bilan tanilishni maqsad qilganmiz. 
-Bizning asosiy qadriyatlarimiz sifat, mijozlar mamnuniyati va ijtimoiy masʼuliyatdir.`
+Bizning asosiy qadriyatlarimiz sifat, mijozlar mamnuniyati va ijtimoiy masʼuliyatdir.`,
+feedback:'📊 Feedback',
 };
