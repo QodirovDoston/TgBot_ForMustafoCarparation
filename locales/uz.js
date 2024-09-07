@@ -38,4 +38,8 @@ Ushbu loyihamiz nogironligi bor shaxslarni qo‘llab-quvvatlashga qaratilgan bo�
 Biz nafaqat ichki bozorda, balki xalqaro bozorda ham sifatli mahsulotlarimiz bilan tanilishni maqsad qilganmiz. 
 Bizning asosiy qadriyatlarimiz sifat, mijozlar mamnuniyati va ijtimoiy masʼuliyatdir.`,
 feedback:'📊 Feedback',
+
+missionVision:'Mission & Vision',
+team:'👥 Team ',
+history:'History',
 };

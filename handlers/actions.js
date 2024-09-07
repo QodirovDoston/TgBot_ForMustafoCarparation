@@ -38,8 +38,6 @@ const handleSubmitQuery = (ctx) => {
     ctx.reply(locale.submitQuery);
 };
 
-
-
 ///////////////////////////////////
 
 // handlers/registration.js
@@ -87,9 +85,6 @@ module.exports = { startRegistration, processRegistration, submitRegistration, r
 
 ///////////////////////////////////////////////
 
-
-
-
 const handleSubmitFeedback = (ctx) => {
     ctx.reply('Please select:', Markup.inlineKeyboard([
         Markup.button.callback(locale.feedback, 'feedback'),
@@ -97,8 +92,6 @@ const handleSubmitFeedback = (ctx) => {
         Markup.button.callback('🔙 Back', 'back_to_main_menu')
     ]));
 };
-
-
 
 // bot.hears('📝 Surveys & Feedback', (ctx) => {
 //     ctx.reply('Please select:', Markup.inlineKeyboard([
@@ -146,14 +139,23 @@ const socialMedia = (ctx) => {
 
 const handleAboutUs = (ctx) => {
     const locale = languageMaps[ctx.session.language] || en;
-    const caption = locale.aboutUsText || "Default caption text";
+    const keyboard = Markup.keyboard([
+        [
+            Markup.button.callback(locale.missionVision, 'mission_vision'),
+            Markup.button.callback(locale.team, 'our_team')
+        ], [
+            Markup.button.callback(locale.history, 'history'),
+            Markup.button.callback(locale.back, 'back_to_main_menu')
+        ]]).resize();
 
-    ctx.replyWithPhoto(
-        'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
-        {
-            caption: caption
-        }
-    );
+        ctx.reply('Please choose an option:', keyboard);
+
+
+        // Mission & Vision
+        // Team 
+        // History
+
+    
 };
 
 module.exports = {
@@ -170,4 +172,5 @@ module.exports = {
     ResourcesForYouth,
     contactUs,
     socialMedia
+    
 };

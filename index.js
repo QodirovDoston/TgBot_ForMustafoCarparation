@@ -14,7 +14,8 @@ const {
 
     ResourcesForYouth,
     contactUs,
-    socialMedia
+    socialMedia,
+    aboutUsTextHandel
 } = require('./handlers/actions');
 
 const bot = new Telegraf(botToken);
@@ -43,9 +44,25 @@ bot.action(/set_language_(\w+)/, (ctx) => {
     ctx.reply(`Language changed to ${languageCode}.`, mainMenuKeyboard(languageCode));
 });
 
-bot.action('back_to_main_menu', (ctx) => {
-    ctx.reply('Returning to the main menu...', mainMenuKeyboard(ctx.session.language));
+// bot.action('back_to_main_menu', (ctx) => {
+//     ctx.reply('Returning to the main menu...', mainMenuKeyboard(ctx.session.language));
+// });
+
+
+bot.hears('Mission & Vision', (ctx)=>{
+
+    const languageCode = ctx.match[1];
+    ctx.session.language = languageCode;
+    
+    const caption = locale.aboutUsText;
+    ctx.replyWithPhoto(
+        'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
+        {
+            caption: caption
+        }
+    );
 });
+
 
 bot.hears('🔙 Back', (ctx) => {
     ctx.reply('Returning to the main menu...', mainMenuKeyboard(ctx.session.language));
@@ -64,8 +81,6 @@ bot.hears('📝 Surveys & Feedback', handleSubmitFeedback);
 
 bot.hears('🌐 Social Media', socialMedia);
 bot.hears('📊 Resources for Youth', ResourcesForYouth);
-bot.hears('📊 Resources for Youth', ResourcesForYouth);
-
 
 
 

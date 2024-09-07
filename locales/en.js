@@ -36,5 +36,11 @@ Our company specializes in the production of handmade dolls.
 Our products are made of high-quality materials, each doll has its own design and qualities.
 Our project is aimed at supporting people with disabilities, helping them become active members of society.
 We aim to be known for our quality products not only in the domestic market but also in the international market.
-Our core values ​​are quality, customer satisfaction and social responsibility`
+Our core values ​​are quality, customer satisfaction and social responsibility`,
+
+feedback:'📊 Feedback',
+
+missionVision:'Mission & Vision',
+team:'Team ',
+history:'History',
 };
