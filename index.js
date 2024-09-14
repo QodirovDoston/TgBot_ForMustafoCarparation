@@ -1,6 +1,8 @@
 // index.js
 const { Telegraf, session } = require('telegraf');
-const { botToken } = require('./config/botConfig');
+require('dotenv').config();
+const  botToken  = process.env.BOT_TOKEN;
+
 const { mainMenuKeyboard, settingsKeyboard } = require('./handlers/mainMenu');
 const {
     handleRegisterForEvent,
