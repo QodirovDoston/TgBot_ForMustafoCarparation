@@ -3,6 +3,20 @@ const { Telegraf, session } = require('telegraf');
 require('dotenv').config();
 const  botToken  = process.env.BOT_TOKEN;
 
+
+
+
+const en = require('./locales/en');
+const ru = require('./locales/ru');
+const uz = require('./locales/uz');
+
+const languageMaps = {
+    uz, en, ru
+};
+
+
+
+
 const { mainMenuKeyboard, settingsKeyboard } = require('./handlers/mainMenu');
 const {
     handleRegisterForEvent,
@@ -22,17 +36,16 @@ const {
 
 const bot = new Telegraf(botToken);
 
-// Session middleware
 bot.use(session());
 
-// Default language middleware
 bot.use((ctx, next) => {
-    if (!ctx.session) ctx.session = {}; // Initialize session if not present
-    if (!ctx.session.language) ctx.session.language = 'en'; // Default to English
+    if (!ctx.session) ctx.session = {};
+    if (!ctx.session.language) ctx.session.language = 'en';
     return next();
 });
 
 bot.start((ctx) => {
+    
     ctx.reply('Main menu:', mainMenuKeyboard(ctx.session.language));
 });
 
@@ -46,25 +59,56 @@ bot.action(/set_language_(\w+)/, (ctx) => {
     ctx.reply(`Language changed to ${languageCode}.`, mainMenuKeyboard(languageCode));
 });
 
-// bot.action('back_to_main_menu', (ctx) => {
-//     ctx.reply('Returning to the main menu...', mainMenuKeyboard(ctx.session.language));
-// });
+bot.action('back_to_main_menu', (ctx) => {
+    ctx.reply('Returning to the main menu...', mainMenuKeyboard(ctx.session.language));
+});
 
 
 bot.hears('Mission & Vision', (ctx)=>{
-
     const languageCode = ctx.match[1];
+    const locale = languageMaps[languageCode] || uz;
     ctx.session.language = languageCode;
     
     const caption = locale.aboutUsText;
     ctx.replyWithPhoto(
         'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
         {
-            caption: caption
+            caption: caption ,
+            parse_mode: 'HTML' 
         }
     );
 });
 
+
+bot.hears('History', (ctx)=>{
+    const languageCode = ctx.match[1];
+    const locale = languageMaps[languageCode] || uz;
+    ctx.session.language = languageCode;
+    
+    const caption = locale.aboutUsHistory;
+    ctx.replyWithPhoto(
+        'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
+        {
+            caption: caption ,
+             parse_mode: 'HTML' 
+        }
+    );
+});
+
+bot.hears('Team', (ctx)=>{
+    const languageCode = ctx.match[1];
+    const locale = languageMaps[languageCode] || uz;
+    ctx.session.language = languageCode;
+    const caption = locale.aboutUsTeam;
+    ctx.replyWithPhoto(
+        'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
+        {
+            caption: caption ,
+             parse_mode: 'HTML' 
+        }
+    );
+
+});
 
 bot.hears('🔙 Back', (ctx) => {
     ctx.reply('Returning to the main menu...', mainMenuKeyboard(ctx.session.language));

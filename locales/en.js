@@ -31,12 +31,26 @@ module.exports = {
     scholarshipApplied: 'You have applied for the scholarship.',
     querySubmitted: 'Your query has been submitted.',
     feedbackSubmitted: 'Thank you for your feedback.',
-    aboutUsText:`📚 *About us:*\n\n
+    aboutUsText:`📚 <b>About us:</b>\n\n
 Our company specializes in the production of handmade dolls.
 Our products are made of high-quality materials, each doll has its own design and qualities.
 Our project is aimed at supporting people with disabilities, helping them become active members of society.
 We aim to be known for our quality products not only in the domestic market but also in the international market.
 Our core values ​​are quality, customer satisfaction and social responsibility`,
+
+aboutUsTeam:`📚 <b>Our Team:</b>\n\n
+Our company specializes in the production of handmade dolls.
+Our products are made of high-quality materials, each doll has its own design and qualities.
+Our project is aimed at supporting people with disabilities, helping them become active members of society.
+We aim to be known for our quality products not only in the domestic market but also in the international market.
+Our core values ​​are quality, customer satisfaction and social responsibility.`,
+
+aboutUsHistory:`📚 <b>work done</b>\n\n
+Our company specializes in the production of handmade dolls.
+Our products are made of high-quality materials, each doll has its own design and qualities.
+Our project is aimed at supporting people with disabilities, helping them become active members of society.
+We aim to be known for our quality products not only in the domestic market but also in the international market.
+Our core values ​​are quality, customer satisfaction and social responsibility.`,
 
 feedback:'📊 Feedback',
 
