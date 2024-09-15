@@ -31,12 +31,28 @@ module.exports = {
     scholarshipApplied: 'Siz stipendiya uchun ariza berdingiz.',
     querySubmitted: 'Sizning so\'rovingiz yuborildi.',
     feedbackSubmitted: 'Fikr-mulohazangiz uchun rahmat.',
-    aboutUsText:`📚 *Biz haqimizda:*\n\n
+    aboutUsText:`📚 <b>Biz haqimizda:</b>\n\n
 Bizning kompaniyamiz qo‘lda tayyorlangan qo‘g‘irchoqlarni ishlab chiqarishga ixtisoslashgan. 
 Mahsulotlarimiz sifatli materiallardan tayyorlanib, har bir qo‘g‘irchoq o‘ziga xos dizayn va sifatlarga ega. 
 Ushbu loyihamiz nogironligi bor shaxslarni qo‘llab-quvvatlashga qaratilgan bo‘lib, ular jamiyatning faol aʼzolariga aylanishlariga yordam beradi. 
 Biz nafaqat ichki bozorda, balki xalqaro bozorda ham sifatli mahsulotlarimiz bilan tanilishni maqsad qilganmiz. 
 Bizning asosiy qadriyatlarimiz sifat, mijozlar mamnuniyati va ijtimoiy masʼuliyatdir.`,
+
+aboutUsTeam:`📚 <b>Bizning Jamoa:</b>\n\n
+Bizning kompaniyamiz qo‘lda tayyorlangan qo‘g‘irchoqlarni ishlab chiqarishga ixtisoslashgan. 
+Mahsulotlarimiz sifatli materiallardan tayyorlanib, har bir qo‘g‘irchoq o‘ziga xos dizayn va sifatlarga ega. 
+Ushbu loyihamiz nogironligi bor shaxslarni qo‘llab-quvvatlashga qaratilgan bo‘lib, ular jamiyatning faol aʼzolariga aylanishlariga yordam beradi. 
+Biz nafaqat ichki bozorda, balki xalqaro bozorda ham sifatli mahsulotlarimiz bilan tanilishni maqsad qilganmiz. 
+Bizning asosiy qadriyatlarimiz sifat, mijozlar mamnuniyati va ijtimoiy masʼuliyatdir.`,
+
+aboutUsHistory:`📚 <b>Qilingan ishlar</b>\n\n
+Bizning kompaniyamiz qo‘lda tayyorlangan qo‘g‘irchoqlarni ishlab chiqarishga ixtisoslashgan. 
+Mahsulotlarimiz sifatli materiallardan tayyorlanib, har bir qo‘g‘irchoq o‘ziga xos dizayn va sifatlarga ega. 
+Ushbu loyihamiz nogironligi bor shaxslarni qo‘llab-quvvatlashga qaratilgan bo‘lib, ular jamiyatning faol aʼzolariga aylanishlariga yordam beradi. 
+Biz nafaqat ichki bozorda, balki xalqaro bozorda ham sifatli mahsulotlarimiz bilan tanilishni maqsad qilganmiz. 
+Bizning asosiy qadriyatlarimiz sifat, mijozlar mamnuniyati va ijtimoiy masʼuliyatdir.`,
+
+
 feedback:'📊 Feedback',
 
 missionVision:'Mission & Vision',
